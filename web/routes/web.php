@@ -23,11 +23,14 @@ Route::get('/hello', function () {
 Route::get('/about', function () {
     return view('pages.about'); // Return a view.
 });
-*/
-
-Route::get('/', 'PagesController@index'); // Route to a controller and it method.
-Route::get('/about', 'PagesController@about'); // Route to a controller and it method.
 
 Route::get('/user/{id}/{name?}', function ($id, $name = 'John') { // Parameters id is required, and name is optional.
     return 'Users id:'.$id.', name:'.$name;
 })->where('id', '[0-9]+'); // -> Regular expression constraints.
+*/
+
+Route::get('/', 'PagesController@index'); // Route to a controller and it method.
+Route::get('/about', 'PagesController@about'); // Route to a controller and it method.
+Route::get('/users', 'PagesController@users'); // Route to a controller and it method.
+
+
